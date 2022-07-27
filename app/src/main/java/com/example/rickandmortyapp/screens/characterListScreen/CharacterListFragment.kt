@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.airbnb.epoxy.EpoxyRecyclerView
 import com.example.rickandmortyapp.R
 import com.example.rickandmortyapp.epoxy.CharacterListEpoxyController
+import java.lang.RuntimeException
 
 class CharacterListFragment : Fragment() {
 
@@ -39,9 +40,8 @@ class CharacterListFragment : Fragment() {
     }
 
     private fun onCharacterSelected(characterId: Int) {
-        /*val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra(Constants.INTENT_EXTRA_CHARACTER_ID, characterId)
-        startActivity(intent)*/
+
+        //throw RuntimeException("for FireBase")
 
         val directions =
             CharacterListFragmentDirections.actionCharacterListFragmentToCharacterDetailFragment(
