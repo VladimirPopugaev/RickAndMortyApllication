@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/nameTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:textSize="28sp"
+        android:textColor="?attr/colorOnBackground"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/genderImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Morty Smith" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/genderImageView"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="16dp"
+        tools:src="@drawable/ic_male_24"
+        app:layout_constraintTop_toTopOf="@id/nameTextView"
+        app:layout_constraintBottom_toBottomOf="@id/nameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:tint="?colorOnSurface"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/aliveTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="?attr/colorOnBackground"
+        app:layout_constraintStart_toStartOf="@id/nameTextView"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView"
+        tools:text="Alive"
+        android:textStyle="italic" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

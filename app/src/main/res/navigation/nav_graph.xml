@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/characterListFragment">
+
+    <action
+        android:id="@+id/action_global_to_episodeDetailsBottomSheetFragment"
+        app:destination="@id/episodeDetailsBottomSheetFragment"/>
+
+    <fragment
+        android:id="@+id/characterListFragment"
+        android:name="com.example.rickandmortyapp.screens.characterListScreen.CharacterListFragment"
+        android:label="Rick and Morty Characters"
+        tools:layout="@layout/fragment_character_list" >
+        <action
+            android:id="@+id/action_characterListFragment_to_characterDetailFragment"
+            app:destination="@id/characterDetailFragment"
+            app:enterAnim="@anim/slide_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/characterDetailFragment"
+        android:name="com.example.rickandmortyapp.screens.characterDetailsScreen.CharacterDetailFragment"
+        android:label="Character Details"
+        tools:layout="@layout/fragment_character_detail">
+
+        <deepLink app:uri="https://RickAndMorty.com/character/{characterId}"/>
+
+        <argument android:name="characterId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/episodeListFragment"
+        android:name="com.example.rickandmortyapp.screens.episodeListScreen.EpisodeListFragment"
+        android:label="Rick and Morty episodes"
+        tools:layout="@layout/fragment_episode_list" />
+
+    <dialog
+        android:id="@+id/episodeDetailsBottomSheetFragment"
+        android:name="com.example.rickandmortyapp.screens.episodeDetailsScreen.EpisodeDetailsBottomSheetFragment"
+        android:label="EpisodeDetailsBottomSheetFragment"
+        tools:layout="@layout/fragment_episode_detail">
+
+        <argument
+            android:name="episodeId"
+            android:defaultValue="-1"
+            app:argType="integer"/>
+
+    </dialog>
+    <fragment
+        android:id="@+id/characterSearchFragment"
+        android:name="com.example.rickandmortyapp.screens.characterSearchScreen.CharacterSearchFragment"
+        android:label="CharacterSearchFragment"
+        tools:layout="@layout/fragment_character_search"/>
+
+
+</navigation>

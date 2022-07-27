@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    app:cardBackgroundColor="?colorSurface"
+    app:strokeColor="?colorOnSurface"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/episodeNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="12dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="?colorOnSurface"
+            tools:text="Episode name"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/episodeAirDateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/episodeNameTextView"
+            app:layout_constraintTop_toBottomOf="@id/episodeNameTextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:textColor="?colorOnSurface"
+            tools:text="00/00/2010"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/episodeNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/background_episode_number"
+            android:includeFontPadding="false"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="?colorSurface"
+            tools:text="S01E01"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
